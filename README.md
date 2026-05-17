@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/C++-11%2F14-blue?style=for-the-badge&logo=cplusplus&logoColor=white" />
   <img src="https://img.shields.io/badge/Data%20Structure-Linked%20List-brightgreen?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Memory-Smart%20Pointers-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Author-Mohammad%20Asadolahi-red?style=for-the-badge" />
 </p>
 
 # SmartVector\<T\>
@@ -20,7 +20,7 @@ Traditional C++ containers force a choice: use `std::vector` with contiguous mem
 `SmartVector<T>` bridges the gap — a **generic, infinitely-growable container** that:
 
 - Provides **array-style subscript access** (`operator[]`) over a linked list
-- Uses `std::shared_ptr` exclusively — **zero raw pointers, zero manual `delete`**
+- Uses `std::shared_ptr` and `std::unique_ptr` — **zero raw pointers, zero manual `delete`**
 - Supports **any data type** via C++ templates
 - Throws **descriptive, heap-allocated exceptions** for bounds violations
 - Maintains an internal element count for O(1) size queries
@@ -103,7 +103,8 @@ int main() {
 try {
     numbers[999] = 42;  // out of bounds
 } catch (unique_ptr<Exception>& e) {
-    (*e) << cout;  // "can't access object, index out of vector"
+    // Exception is thrown with a descriptive message:
+    // "can't access object, index out of vector"
 }
 ```
 
@@ -170,6 +171,17 @@ clang++ -std=c++14 -o smartvector Main.cpp
 
 ---
 
+## Author
+
+**Mohammad Asadolahi** — Senior Agentic AI Engineer
+
+- GitHub: [MohammadAsadolahi](https://github.com/MohammadAsadolahi)
+- Focus: Agentic AI Architectures In The Wild
+
+---
+
 <p align="center">
   <sub>Built with modern C++ principles — because memory safety isn't optional, it's foundational.</sub>
 </p>
+
+this readme is AI assisted generated, so check for mistakes
